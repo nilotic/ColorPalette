@@ -37,8 +37,10 @@ struct ColorCell: View {
             
             VStack(alignment: .leading, spacing: 7) {
                 Text(data.name)
+                    .frame(width: 128, alignment: .leading)
                     .font(.system(size: 15, weight: .medium))
                     .foregroundColor(Color("title"))
+                    .lineLimit(1)
                 
                 
                 Text("\(data.color.hex)\n\(data.color.rgbDescription)")
