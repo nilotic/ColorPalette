@@ -24,6 +24,7 @@ struct PaletteView: View {
                 .navigationTitle("Color")
         }
         .preferredColorScheme(colorScheme)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     // MARK: Private

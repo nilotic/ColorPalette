@@ -10,7 +10,9 @@ import SwiftUI
 extension Color {
     
     var components: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
-        guard var components = UIColor(self).cgColor .components else { return (1, 1, 1, 1) }
+        guard let p3ColorSpace = CGColorSpace(name: CGColorSpace.displayP3), let p3Color = UIColor(self).cgColor.converted(to: p3ColorSpace, intent: .defaultIntent, options: nil),
+              var components = p3Color.components else { return (1, 1, 1, 1) }
+        
         components[0] = (components[0] * 1000).rounded() / 1000
         components[1] = (components[1] * 1000).rounded() / 1000
         components[2] = (components[2] * 1000).rounded() / 1000
@@ -25,7 +27,9 @@ extension Color {
     }
     
     var hex: String {
-        guard let components = UIColor(self).cgColor.components else { return "" }
+        guard let p3ColorSpace = CGColorSpace(name: CGColorSpace.displayP3), let p3Color = UIColor(self).cgColor.converted(to: p3ColorSpace, intent: .defaultIntent, options: nil),
+              let components = p3Color.components else { return "" }
+        
         return String(format: "#%02lX%02lX%02lX", lroundf(Float(components[0] * 255)), lroundf(Float(components[1] * 255)), lroundf(Float(components[2] * 255)))
     }
 }
