@@ -35,7 +35,8 @@ final class PaletteData: ObservableObject {
                     PaletteColor(index: 2, name: "Neutral_2", color: Color("neutral2")), PaletteColor(index: 3, name: "Neutral_3", color: Color("neutral3")),
                     PaletteColor(index: 4, name: "Neutral_4", color: Color("neutral4")), PaletteColor(index: 5, name: "Neutral_5", color: Color("neutral5")),
                     PaletteColor(index: 6, name: "Neutral_6", color: Color("neutral6")), PaletteColor(index: 7, name: "Neutral_7", color: Color("neutral7")),
-                    PaletteColor(index: 8, name: "Neutral_8", color: Color("neutral8")), PaletteColor(index: 9, name: "Neutral_9", color: Color("neutral9"))]
+                    PaletteColor(index: 8, name: "Neutral_8", color: Color("neutral8")), PaletteColor(index: 9, name: "Neutral_9", color: Color("neutral9")),
+                    PaletteColor(index: 8, name: "Neutral_10", color: Color("neutral10"))]
     
     let alerts = [PaletteColor(index: 0, name: "Alert", color: Color("alert"))]
 }
