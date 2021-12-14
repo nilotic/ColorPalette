@@ -27,9 +27,9 @@ extension Color {
     }
     
     var hex: String {
-        guard let p3ColorSpace = CGColorSpace(name: CGColorSpace.displayP3), let p3Color = UIColor(self).cgColor.converted(to: p3ColorSpace, intent: .defaultIntent, options: nil),
-              let components = p3Color.components else { return "" }
+        guard let colorSpace = CGColorSpace(name: CGColorSpace.displayP3), let color = UIColor(self).cgColor.converted(to: colorSpace, intent: .defaultIntent, options: nil),
+              let components = color.components, 4 <= components.count else { return "" }
         
-        return String(format: "#%02lX%02lX%02lX", lroundf(Float(components[0] * 255)), lroundf(Float(components[1] * 255)), lroundf(Float(components[2] * 255)))
+        return String(format: "#%02lX%02lX%02lX%02lX", lroundf(Float(components[0] * 255)), lroundf(Float(components[1] * 255)), lroundf(Float(components[2] * 255)), lroundf(Float(components[3] * 255)))
     }
 }
