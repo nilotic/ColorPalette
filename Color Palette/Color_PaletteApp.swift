@@ -11,7 +11,7 @@ import SwiftUI
 struct Color_PaletteApp: App {
     var body: some Scene {
         WindowGroup {
-            PaletteView()
+            ColorPalettesView()
         }
     }
 }

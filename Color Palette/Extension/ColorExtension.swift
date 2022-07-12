@@ -21,7 +21,7 @@ extension Color {
         return (components[0] * 255, components[1] * 255, components[2] * 255, components[3])
     }
     
-    var rgbDescription: String {
+    var description: String {
         let components = components
         return "(\(Int(components.red)), \(Int(components.green)), \(Int(components.blue)))"
     }
