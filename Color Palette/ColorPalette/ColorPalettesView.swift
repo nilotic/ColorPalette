@@ -27,17 +27,13 @@ struct ColorPalettesView: View {
         }
         .preferredColorScheme(data.colorScheme)
         .navigationViewStyle(StackNavigationViewStyle())
+        .task {
+            data.request()
+        }
     }
     
     // MARK: Private
     private var contentsView: some View {
-        paletteSectionsView
-            .task {
-                data.request()
-            }
-    }
-    
-    private var paletteSectionsView: some View {
         ScrollView {
             VStack(spacing: 60) {
                 ForEach($data.sections) {
